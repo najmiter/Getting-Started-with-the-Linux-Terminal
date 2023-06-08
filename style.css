@@ -1,0 +1,134 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+html {
+  color-scheme: dark;
+  color: rgb(240, 240, 240);
+}
+
+main {
+  max-width: 75ch;
+  margin: 1rem auto;
+}
+
+h1 {
+  padding: 1rem;
+  font-size: 3rem;
+}
+
+h2 {
+  margin-bottom: .8rem;
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 1.5rem 0 .7rem;
+}
+
+p {
+ margin: .7rem 0 .5rem;
+}
+
+p, li {
+  font-weight: lighter;
+}
+
+li {
+  margin-left: 3rem;
+  list-style: square;
+}
+
+ul {
+  padding: .5rem 0;
+}
+
+code {
+  padding: .1rem .5rem;
+  font-size: inherit;
+  font-family: 'PT Mono', monospace;
+  background-color: rgb(56, 56, 56);
+  border-radius: 2.5px;
+}
+
+.container {
+  background-color: rgb(33, 33, 33);
+  margin: 0 .5rem 1.5rem;
+  padding: 1.5rem 1rem;
+  border-radius: 5px;
+}
+
+.note {
+  font-family: 'PT Serif', serif;
+  letter-spacing: .03rem;
+  color: rgb(206, 206, 206);
+  background-color: rgb(57, 51, 51);
+  border-radius: 5px;
+  padding: .2rem 2ch;
+  margin: 2ch 1rem;
+  text-indent: 0;
+}
+
+.note strong {
+  font-family: 'PT Serif', serif;
+}
+
+.note code {
+  background-color: rgb(43, 43, 43);
+}
+
+.terminal {
+  font-family: 'Ubuntu Mono', monospace;
+  background-color: rgb(22, 22, 22);
+  box-shadow: 0 0 .6rem rgba(30, 143, 255, 0.646);
+  margin: 1rem 0;
+  padding: 1rem 1.6rem;
+  border-radius: 5px;
+}
+
+.terminal p {
+  padding: 0;
+  margin: 0;
+}
+
+.terminal .pwd {
+  font-family: inherit;
+  color: dodgerblue;
+}
+
+.selected {
+  font-family: inherit;
+  background-color: rgb(144, 144, 118);
+  padding: .1rem .4rem;
+}
+
+a {
+  text-decoration: none;
+  color: dodgerblue;
+  font-family: 'PT Mono', monospace;
+  text-align: center;
+}
+
+.table {
+  padding: .2rem 2rem;
+}
+
+@media screen and (width < 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.125rem;
+  }
+}
