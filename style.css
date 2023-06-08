@@ -131,4 +131,7 @@ a {
   h3 {
     font-size: 1.125rem;
   }
+  a, p, li {
+    font-size: .85rem;
+  }
 }
