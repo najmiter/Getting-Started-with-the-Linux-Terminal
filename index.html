@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Started with Linux Terminal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Linux Terminal Guide</h1>
+    <div class="container">
+      <h2>Table of Contents</h2>
+      <div class="table">
+        <a href="#open">01. How to open it</a>
+        <br>
+        <a href="#where">02. Where & who are you</a>
+        <br>
+        <a href="#cd">03. Changing directories</a>
+        <br>
+        <a href="#top">04. Scroll the cursor to top</a>
+        <br>
+        <a href="#cancel">05. Canceling an ongoing process</a>
+        <br>
+        <a href="#install">06. Installing stuff</a>
+        <br>
+        <a href="#uninstall">07. Uninstalling stuff</a>
+        <br>
+        <a href="#opening">08. Opening files & stuff</a>
+        <br>
+        <a href="#view">09. Viewing files of a directory</a>
+        <br>
+        <a href="#create">10. Creating directories & files</a>
+        <br>
+        <a href="#delete">11. Deleting files and directories</a>
+        <br>
+        <a href="#write">12. Writing to files</a>
+        <br>
+        <a href="#read">13. Reading from files</a>
+        <br>
+        <a href="#copy">14. Copying & moving files</a>
+        <br>
+        <a href="#uni">15. Universal selector</a>
+      </div>
+    </div>
+    <div class="container">
+      <h2 id="open">How to open it</h2>
+      <p>
+        There's a few ways that you can accomplish that:
+        <ul>
+          <li>Use the shortcut</li>
+          <li>Open from the applications</li>
+          <li>Open from the search bar</li>
+        </ul>
+      </p>
+      <h3>Using the shortcut</h3>
+      <p>
+        If you've opted to use this method, you're a badass 😎 To do that, you just have to use this shortcut <code>ctrl + alt + t</code>. This will launch the terminal.
+      </p>
+      <p class="note">
+        If this seems a bit mouthful to you, you can always change your shortcut from settings. But this is the default in Ubuntu Linux.
+      </p>
+
+      <h3>From the apps</h3>
+      <p>
+        You can also open the terminal by going to all the applications and opening it from there. Opening the apps can done by pressing the supper key (the one with Windows' logo on it) and then the <code>a</code> key.
+      </p>
+      
+      <h3>From the search bar</h3>
+      <p>
+        Press the super key and then search <strong>terminal</strong> in the search bar.
+      </p>
+      <p class="note">
+        There's no shortcut key set for the search bar by default in Ubuntu but you can always change or add it from the settings.
+      </p>
+    </div> <!-- END OF CONTAINER -->
+    
+    <div class="container">
+      <h2 id="where">Where & who are you</h2>
+      <p>
+        By default, you'll be in your <strong>root</strong> directory. This is the <strong>base</strong> of all your directories/folders. You will see something like this:
+      </p>
+      <div class="terminal">
+        <span class="pwd">~$</span> |
+      </div>
+      <p>
+        What <code>~</code> symbol means is that you are in the root folder. Don't worry if yours is different. The important part is that you will be in your root directory by default.
+      </p>
+      
+      <h3>A way to see your location</h3>
+      <p>
+        If you want to see which folder you are currently in, you can use <code>pwd</code> command. This will <strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory. The syntax will look something like:
+      </p>
+      <div class="terminal">
+        <span class="pwd">~$</span> pwd
+      </div>
+      <p>
+        As soon as you hit enter, you'll see:
+      </p>
+      <div class="terminal">
+        <span class="pwd">~$</span> pwd
+        <br>
+        /home/najmiter
+        <br>
+        <span class="pwd">~$</span> |
+      </div>
+      <p>
+        In your case, it'll be your username, and not <strong>najmiter</strong> 😅
+      </p>
+      
+      <h3>Who are you</h3>
+      <p>
+        If you forget who you are, you can ask the terminal. No jk!
+      </p>
+      <p>
+        There is a command that tells you your username. This is helpful when you've got more than one users on your OS. You can, then execute this command to know which user you're currently logged in as. That command is <code>whoami</code>. Here's a demo
+      </p>
+      <div class="terminal">
+        <span class="pwd">~$</span> whoami
+        <br>
+        najmiter
+        <br>
+        <span class="pwd">~$</span> |
+      </div>
+    </div> <!-- END OF CONTAINER -->
+
+    <div class="container">
+      <h2 id="cd">Changing directories</h2>
+      <p>
+        You're already familiar with Windows operating system. There's <strong>local disks</strong> and inside of those, there's folders. Those folders may further contain many folders and files.
+      </p>
+      <p>
+        These folders are implemented as <strong>trees</strong>. Each folder is a <strong>node</strong>. These nodes are <strong>doubly linked</strong>. Meaning: you may go forward or backward from any folder you're currently on.
+      </p>
+      <p>
+        Now don't get frustrated by it! You already know that stuff and for a quick revision, you can just open any of your local disk and start browsing the folders. You will come to an understanding that "<em>WOW! It really is just a tree!</em> ".
+      </p>
+      <p>
+        And just like you can just wander around your directories in Windows, you may do that from the terminal as well. And to do that, we have the <code>cd</code> command. I'm sure you already know that it's a shortened version for <strong>change directory</strong>.
+      </p>
+      <h3><code>cd</code> command</h3>
+      <p>
+        The syntax for it is really simple: you type the letters <code>cd</code> followed by the path. Hitting enter would take you to that directory.
+      </p>
+      <div class="note">
+        <strong>Path</strong> is the address of any file or folder. There's two kinds of paths; relative and absolute path. Relative path is relative to your <strong>working directory</strong> whereas the absolute path is all the way from your <strong>root</strong> directory also known as the <strong>home directory</strong>.
+      </div>
+      <p>
+        The argument to the <code>cd</code> command is optional. By default, it's you're root directory. Let's change directory to <strong>Desktop</strong> and learn from that!
+      </p>
+      <div class="terminal">
+        <span class="pwd">~$</span> cd Desktop
+      </div>
+      <p>
+        After executing this command, you'll see:
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop$</span> |
+      </div>
+      <p>
+        As you know, the default parameter for the <code>cd</code> command is the <strong>root</strong>. So, if you executed the <code>cd</code> without specifying the destination, it'll take you to the root. And it doesn't matter how many nodes (directories) deep you've gone, it'll still take you home (to the place, you belong 🎶)
+      </p>
+      <div class="terminal">
+        ~/Desktop$ cd
+        <br>
+        <span class="pwd">~$</span> |
+      </div>
+      <p>
+        Other ways to do the same are <code>cd ~/</code>, <code>cd ~</code>, and <code>cd /</code>. They all have the same effect but, simple <code>cd</code> is shorter 😁
+      </p>
+      <h3>Go to the previous folder</h3>
+      <p>
+        You can use <code>cd -</code> and this will take you to the folder that you were in. It's like clicking that <strong>arrow back</strong> button in <strong>Windows Explorer</strong>.
+      </p>
+
+    </div> <!-- END OF CONTAINER -->
+
+    <div class="container">
+      <h2 id="top">Scroll the cursor to top</h2>
+      <p>
+        Running the commands can cluster your terminal and your cursor is eventually going to reach the bottom of the screen and the entire screen is going to be messy with all the commands and their outputs that you shall have had done before.
+      </p>
+      <p>
+        You might try to scroll the terminal but it won't work!
+      </p>
+      <p>
+        The solution to that is a shortcut. Use <code>ctrl + t</code> and your cursor will reach the top.
+      </p>
+      <h3><code>clear</code> command</h3>
+      <p>
+        You may have also come across this command. But There's a difference between using <code>ctrl + t</code> and the <code>clear</code> command.
+      </p>
+      <p>
+        Using <code>ctrl + t</code> will only scroll the cursor to the top of the screen. Whereas <code>clear</code> means to also remove all of the outputs (text) from the terminal.
+      </p>
+      <p>
+        Try both of them and then notice that the after the <code>ctrl + t</code>, you will be able to scroll up to the previous commands. Whereas, after <code>clear</code>, there will be nothing left to scroll up to.
+      </p>
+    </div> <!-- END OF CONTAINER -->
+
+    <div class="container">
+      <h2 id="cancel">Canceling an ongoing process</h2>
+      <p>
+        You may find yourself in the middle of something that you don't want to continue on anymore. You can cancel any ongoing process like a package being installed or a program running by pressing <code>ctrl + z</code>.
+      </p>
+      <h3>Cancel a command</h3>
+      <p>
+        Other times, you may also be in the middle of typing something on the terminal and then realize that it's not the right command or maybe you don't want to execute the said command. You can cancel that line by pressing <code>ctrl + c</code>.
+      </p>
+      <p>Here's a demo:</p>
+      <div class="terminal">
+        <span class="pwd">~$</span> cd Desktop/Lab/Stuff
+      </div>
+      <p>
+        At this point, if you want to cancel this command, don't delete it by pressing <code>backspace</code> multiple times. Instead use <code>ctrl + c</code>. And you'll be brought to the next line and that command will be ignored.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~$</span> cd Desktop/Lab/Stuff^C
+        <br>
+        <span class="pwd">~$</span> |
+      </div>
+
+    </div> <!-- END OF CONTAINER -->
+
+    <div class="container">
+      <h2 id="install">Installing stuff</h2>
+      <p>
+        You're on a computer and there's no doubt that you'll be doing computer stuff on there. We usually need applications to do that. Installing softwares from the terminal is very easy in Linux. Let's install <strong>g++</strong> to learn this one:
+      </p>
+      <p>
+        To install anything, you will have to use the following command:
+      </p>
+      <p>
+        <code>sudo apt install $PACKAGE_NAME</code>
+      </p>
+      <p class="note">
+        Terminal has also the ability to make variables (see more later). To indicate a variable, we use the dollar sign <code>$</code> and then the name of the variable.
+      </p>
+      <p>
+        Everything before $PACKAGE_NAME will be the same. We don't have the variable called PACKAGE_NAME but we can simply write the name of the package directly.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~$</span> sudo apt install g++
+      </div>
+      <p>
+        Execute this command and it'll install the <strong>g++</strong> compiler.
+      </p>
+      <p class="note">
+        <strong>g++</strong> is the compiler for <strong>C++</strong> but it also brings the <strong>C</strong> compiler with it. Because C++ is derived from C language and we are well aware that object of the dervied class brings all the features of its base class 😁
+      </p>
+
+      <h3>What is <code>sudo</code></h3>
+      <p>
+        The word <code>sudo</code> is shortened version of <strong>superuser do</strong>. You may know this guy as <strong>The Administrator</strong>. When you've got many users on Windows, you run the setup files as administrator because it has to be installed on the root directory.
+      </p>
+      <p>
+        We start our commands with this keyword because we want to give it the permissions to write data on the <strong>root</strong> directory. (For your understanding, you can relate the <strong>root</strong> to the <strong>Local Disk C</strong> of your Windows operating system)
+      </p>
+      <h3>What is <code>apt</code></h3>
+      <p>
+        This stands for <strong>Strong Packaging Tool</strong>. The purpose of this guy is to help us in the actual installation of the package. It's also responsible for updating all the packages installed on the system when new updates are available.
+      </p>
+      <p class="note">
+        To update your packages, you can use <code>sudo apt update</code> command and it'll update (if any available) the file that containes all the information about what's installed on your system. Then use<br><code>sudo apt upgrade</code> and it'll install all the available updates for all the packages (softwares) installed on your computer.
+      </p>
+    </div> <!-- END OF CONTAINER -->
+
+    <div class="container">
+      <h2 id="uninstall">Uninstalling stuff</h2>
+      <p>
+        To uninstall anything, use <code>sudo apt purge $PACKAGE_NAME</code> and like isntalling, it'll ask for your password. Then it'll also ask for confirmation. Enter <code>y</code> and it'll uninstall said package.
+      </p>
+
+    </div> <!-- END OF CONTAINER -->
+    
+    <div class="container">
+      <h2 id="opening">Opening files & stuff</h2>
+      <p>
+        You can open any file, folder, or even links from the terminal. The syntax is really simple. All you have to do is say <code>open $NAME</code>. This $NAME could be the name of a file, folder or even an online link.
+      </p>
+      <p>
+        This will open the specified target in its default application.
+      </p>
+
+    </div> <!-- END OF CONTAINER -->
+    
+    <div class="container">
+      <h2 id="view">Viewing files of a directory</h2>
+      <p>
+        You can take a peek at what's inside a directory that you specify. To do that, all you need to do is say <code>ls</code>. This command will show you a short list of all the files and directories inside you working directory.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~$</span> ls
+      </div>
+      <p>
+        This will show the directories and files in your root directory. You can also indirectly specify a folder by giving the absolute or the relative path to it like <code>ls ~/Desktop</code> and it'll show the contents of the Desktop directory.
+      </p>
+      <h3>Using flags</h3>
+      <p>
+        You can also specify how you want that list to look like and how much information do want to see. You can use <code>ls -l</code> to show the long listing. What that means is that you'll see all the details of every item.
+      </p>
+      <p>
+        You can also use the <code>-a</code> flag to see the hidden files. You may also combine them and say <code>ls -al</code> and this will show all the deatils about all the files including the hidden files.
+      </p>
+      <p class="note">
+        To see more flags and what you can do, use <code>man ls</code> command and it'll show you the manual for <code>ls</code> command and how to use it.
+      </p>
+
+    </div> <!-- END OF CONTAINER -->
+
+    <div class="container">
+      <h2 id="create">Creating directories & files</h2>
+      <p>
+        Let's see how we can create our own folder from the terminal. To do that, you can use the <code>mkdir $FOLDER_NAME</code> command. The FOLDER_NAME can be anything you want. Upon execution, this will create a new folder with you specified name in your working directory.
+      </p>
+      <h3>Creating directories/folders</h3>
+      <p>
+        Let's create a new folder called <strong>OS</strong> in Desktop folder and learn how to use this command.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~$</span> cd Desktop
+        <br>
+        <span class="pwd">~Desktop$</span> mkdir OS
+        <br>
+        <span class="pwd">~Desktop$</span> |
+      </div>
+      <p>
+        Let's list all the files in our Desktop directory by using the <code>ls</code> command.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop$</span> ls
+        <br>
+        OS
+        <br>
+        <span class="pwd">~Desktop$</span> |
+      </div>
+
+      <h3>Creating files</h3>
+      <p>
+        Let's change directory to the <strong>OS</strong> folder that we just created.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop$</span> cd OS
+        <br>
+        <span class="pwd">~Desktop/OS$</span> |
+      </div>
+
+      <p>
+        In here, we're going to create a new file to write our <strong>C++</strong> code. Let's create <strong>main.cpp</strong> from the terminal. To do that, use the <code>touch $FILE_NAME</code> command.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop/OS$</span> touch main.cpp
+      </div>
+      <p>
+        Upon listing the files of the working directory, you will see that your file has been created.
+      </p>
+      <p>
+        And one thing I'd like to emphasise here; I've shown you how you can create a <code>.cpp</code> file but that DOES NOT mean that's the only one you can do.
+      </p>
+      <p>
+        You can even create image files or videos even. <code>touch</code> has no limits. Touch everything! (That came out the wrong way but I hope you get it 😅)
+      </p>
+      <p>
+        Now you can use the <code>open</code> command like <code>open main.cpp</code> and it'll open it in the <strong>text editor</strong> (default). But you're already the <strong>VIM</strong> expert now so you know how to open it with that. Sky's the limit!
+      </p>
+      <p class="note">
+        You can also create multiple files in one go. For example,<br><code>touch main.cpp array.hpp array.cpp make.txt</code> will create all four of these files in the working directory.
+      </p>
+
+    </div> <!-- END OF CONTAINER -->
+
+    <div class="container">
+      <h2 id="delete">Deleting files and directories</h2>
+      <p>
+        To delete a file, you can use the <code>rm $FILE_NAME</code> command if the file is also in the working directory. Otherwise you will have to provide the path to the file.
+      </p>
+      <p>
+        To delete a folder, use the same command but use the <code>-r</code> flag. If you the directory has children directories, it's going to give you a warning or an error. To overcome that, use the force <code>-f</code> flag.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop/OS$</span> rm main.cpp
+      </div>
+      <p>
+        If you execute this command, make sure to make this file again becuase we need it 😁 Let's create a dummy folder and then delete it.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop/OS$</span> mkdir dummy
+        <br>
+        <span class="pwd">~Desktop/OS$</span> rm -r dummy
+        <br>
+        <span class="pwd">~Desktop/OS$</span> |
+      </div>
+      <p>
+        If the <strong>dummy</strong> folder had more folders inside it, we'll instead use <code>rm -rf dummy</code>.
+      </p>
+    </div> <!-- END OF CONTAINER -->
+
+    <div class="container">
+      <h2 id="write">Writing to files</h2>
+      <p>
+        Let's a few different ways to write to a file from the terminal without actually opening the file.
+      </p>
+      <h3><code>echo</code> command</h3>
+      <p>
+        You can use this command to basically write any value to the terminal and to files. Let's see some examples...
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop/OS$</span> echo "anybody home?"
+        <br>
+        anybody home?
+        <br>
+        <span class="pwd">~Desktop/OS$</span> |
+      </div>
+      <p>
+        That was just the terminal. Let's now see how we can write to a file using this command.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop/OS$</span> echo "#include &lt;iostream&gt;" >> main.cpp
+      </div>
+      <p>
+        Let's break it down! The first keyword is the command itself. After that, it's the <strong>string</strong> that we want to write to the file. Then we have two <strong>greate-than</strong> symbols. They indicate where we want this string to be written. Then we have the name of the file, <code>main.cpp</code>.
+      </p>
+      <p>
+        There's another way to do this and that is to use only one <strong>greate-than</strong> symbol. The difference is that it will overwrite the entire file with the new string. Whereas if you use <strong>>></strong>, it will <strong>append</strong> to the contents of the file.
+      </p>
+
+      <h3><code>cat</code> command</h3>
+      <p>
+        Another and a better way to write to a file from the terminal is to use the <code>cat</code> command. Let's jump into it and see how to use it.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop/OS$</span> cat main.cpp
+        <br>
+        #include &lt;iostream&gt;
+        <br>
+        <span class="pwd">~Desktop/OS$</span> |
+      </div>
+      <p>
+        Now, don't get confused by it. It's <strong>NOT reading</strong>! the file. It's actually <strong>writing</strong> the contents of the specified file to the terminal.
+      </p>
+      <p>
+        Let's now <strong>write</strong> some code using <code>cat</code> command.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop/OS$</span> cat >> main.cpp
+        <br>
+        |
+      </div>
+      <p>
+        It'll keep taking the input until you press <code>ctrl + d</code> from your keyboard. At which point, it'll write whatever you'd written on the terminal to the file in <strong>append</strong> mode. It's the same for this just as was in <code>echo</code> command. If you use one <strong>></strong>, it's going to overwrite the file with the new content but will keep the previous data if you use two <strong>>></strong>.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop/OS$</span> cat >> main.cpp
+        <br>
+        #include &lt;iostream&gt;
+        <br>
+        int main() {
+        <br>
+        &nbsp;&nbsp;std::cout &lt;&lt; "Hello World\n";
+        <br>
+        } |
+        <br>
+        <span class="pwd">~Desktop/OS$</span> |
+      </div>
+
+      <h3><code>></code> command</h3>
+      <p>
+        You can also do the shorthand for the <code>cat</code> command like:
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop/OS$</span> >> main.cpp
+        <br>
+        |
+      </div>
+      <p>
+        And of course, you can use the <strong>></strong> version as well.
+      </p>
+    </div> <!-- END OF CONTAINER -->
+
+    <div class="container">
+      <h2 id="read">Reading from files</h2>
+      <p>
+        Reading files is as easy as writing to them. Let's go over a few ways of a reading file from the terminal.
+      </p>
+      <h3><code>less</code> command</h3>
+      <p>
+        This command will show you the contents of the file in read mode. To jump out of there and back to the terminal, you have to press <code>q</code> key.
+      </p>
+      <p>
+        If the file has more content than there's space on your screen to display, it will give you a scroll. Use <strong>arrow up</strong>, <strong>arrow down</strong>, <strong>page up</strong>, or <strong>page down</strong> keys to scroll the text. And whenever you press the <code>q</code> key, it'll close the file and you'll be back to the terminal.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop/OS$</span> less main.cpp
+      </div>
+      <p>
+        As soon as you hit enter, you'll see your file's content:
+      </p>
+      <div class="terminal">
+        #include &lt;iostream&gt;
+        <br>
+        int main() {
+        <br>
+        &nbsp;&nbsp;std::cout &lt;&lt; "Hello World\n";
+        <br>
+        }
+        <br>
+        <span class="selected">main.cpp (END)</span>
+      </div>
+      <p>
+        Press <code>q</code> and you'll be back into the terminal:
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop/OS$</span> less main.cpp
+        <br>
+        <span class="pwd">~Desktop/OS$</span> |
+      </div>
+      <h3><code>head</code> command</h3>
+      <p>
+        This shows you the first ten lines of your file by default.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop/OS$</span> head main.cpp
+        <br>
+        #include &lt;iostream&gt;
+        <br>
+        int main() {
+        <br>
+        &nbsp;&nbsp;std::cout &lt;&lt; "Hello World\n";
+        <br>
+        }
+        <br>
+        <span class="pwd">~Desktop/OS$</span> |
+      </div>
+      <p>
+        But you can specify the number of lines that you want to see by using the <code>-n</code> flag.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop/OS$</span> head -n 1 main.cpp
+        <br>
+        #include &lt;iostream&gt;
+        <br>
+        <span class="pwd">~Desktop/OS$</span> |
+      </div>
+      <h3><code>tail</code> command</h3>
+      <p>
+        Same as the <code>head</code> command but it shows the last 10 lines of the file by default. You can also use the <code>-n</code> flag with this to specify the lines that you want to see of your choice.
+      </p>
+
+    </div> <!-- END OF CONTAINER -->
+
+    <div class="container">
+      <h2 id="copy">Copying & moving files</h2>
+      <p>
+        This is a little bit tricky. Not really but sometimes, especially for beginners, it can be! But we're here to make the tricky stuff lemon-squeasy stuff, right 😁
+      </p>
+      <h3>Copying a file</h3>
+      <p>
+        Before I tell you how it's done, I want you to imagine a scenario with me. Imagine your mother/sister or anyone at home asks you to put the dress in the almirah. That almirah is in some room. So, you will go to that room. But then you won't just put it there (if you're a good kid that is) but instead you will go the almirah and then put it there.
+      </p>
+      <p>
+        The room is like a folder or directory. Just like a room has things inside it, a folder can have things (files) in it too. Putting some content into that folder doesn't mean just throw it in there randomly. Sure, we will go that folder but then we also have to find the right spot (the file).
+      </p>
+      <p>
+        This confuses lots of beginners so I thought we should clear it up beforehand. Now let's talk business 😎
+      </p>
+      <p>
+        The <code>cp $SOURCE_FILE $DEST_FILE</code> command can be used to copy a file. Let's copy our <code>main.cpp</code> file to <strong>Downloads</strong> folder and learn along the way.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop/OS$</span> cp main.cpp ~/Downloads/main_ki_copy.cpp
+        <br>
+        <span class="pwd">~Desktop/OS$</span> |
+      </div>
+      <p>
+        Let's go to the Downloads folder by typing <code>cd ~/Downloads</code>. Of course, you could first go to the root and then go the Downloads folder but this is the same.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Downloads$</span> ls
+        <br>
+        main_ki_copy.cpp
+        <br>
+        <span class="pwd">~Downloads$</span> |
+      </div>
+      <p>
+        Assuming you didn't have anything in your Downloads folder, you should also see this output. But, at least, among other files/directories, you will see your <code>main_ki_copy.cpp</code> as well.
+      </p>
+      <p>
+        Here, we first went to the room (Downloads folder) and then specified where (main_ki_copy.cpp) we wanted to put our dress (code / text / content). I hope it's clear now 🤩
+      </p>
+      <p class="note">
+        This does not at all mean that you can't copy or move without specifying the name of the destination. If you don't specify the name for the file, it will keep the original name. The point of the story was to help you understand that data is not just randomly thrown into folder.
+      </p>
+      <h3>Moving a file</h3>
+      <p>
+        This one is the same as copying except for a few concepts. As you know, copying a file keeps the original file at its place while making a new file at the destination. Whereas <strong>moving</strong> means to move the file itself to the destination.
+      </p>
+      <p>
+        The <code>mv $SOURCE_FILE $DEST_FILE</code> command can be used to move a file. Let's move the <code>main_ki_copy.cpp</code> back the OS folder.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Downloads$</span> mv main_ki_copy.cpp ~/Desktop/OS/kahan_se_i_hai.cpp
+        <br>
+        <span class="pwd">~Downloads$</span> |
+      </div>
+      <p>
+        Notice that, this will move the file to it's specified destination but it will also <strong>rename</strong> the file becuase this time, I use a different name. No doubt, you could've used the same name but I wanted to show you something and that is that you can also use the <code>mv</code> command to rename a file or a directory.
+      </p>
+      <p>
+        Let's rename the <strong>OS</strong> folder to <strong>Politics Class</strong>. And to keep our command short and clean, let's also <code>cd</code> to Desktop because that's where the subject folder is located.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Downloads$</span> cd ~/Desktop
+        <br>
+        <span class="pwd">~Desktop$</span> mv OS "Politics Class"
+        <br>
+        <span class="pwd">~Desktop$</span> |
+      </div>
+      <p>
+        Notice that I've put the name in quotes because there's a space in the name. Make sure to put the quotes if your chosen name has empty spaces. Anyway, now if you <code>ls</code>, you'll notice that your folder has now been changed to <strong>Politics Class</strong>.
+      </p>
+    </div> <!-- END OF CONTAINER -->
+
+    <div class="container">
+      <h2 id="uni">Universal selector</h2>
+      <p>
+        You have learned a few commands up until now. And you saw how you can target one file or directory at a time. But you can also apply filter (not the Snapchat filter) on your targets.
+      </p>
+      <p>
+        Let's imagine you had many <code>cpp</code> files and you wanted to, maybe, copy them, or delete them, or move them or whatever. Instead of doing it to each one of them, you can use the <strong>universal selector</strong>.
+      </p>
+      <p>
+        Let's create some files in the Desktop folder and then move them to <strong>Politics Class</strong> folder at once.
+      </p>
+      <div class="terminal">
+        <span class="pwd">~Desktop$</span> touch array.cpp vector.cpp tensor.cpp network.cpp
+        <br>
+        <span class="pwd">~Desktop$</span> mv *.cpp ./Politics Class
+        <br>
+        <span class="pwd">~Desktop$</span> |
+      </div>
+      <p>
+        The <code>*</code> is the <strong>universal selector</strong> and it means that any file that ends with <strong>.cpp</strong>, put it on my plate. We got some business to take care! So it will select all of those files and do whatever told.
+      </p>
+      <p>
+        You can also use this selector when removing file. Using <code>rm *.cpp</code> will remove all the <code>cpp</code> files from the working directory.
+      </p>
+    </div> <!-- END OF CONTAINER -->
+    <br><br><br>
+    <hr style="border-color: grey;">
+    <p style="font-family: 'PT Mono', monospace; text-align: center; font-size: 1rem; color: grey;">
+      Made by the people for the people
+      <br>
+      <a href="https://github.com/najmiter">Github</a>
+      <br>
+      <a href="https://youtube.com/najmiter">YouTube</a>
+
+    </p>
+  </main>
+</body>
+</html>
