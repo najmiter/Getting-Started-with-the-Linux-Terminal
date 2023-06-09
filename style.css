@@ -131,7 +131,7 @@ a {
   h3 {
     font-size: 1.125rem;
   }
-  a, p, li {
+  a, p, li, strong, em, p.note {
     font-size: .85rem;
   }
 }
